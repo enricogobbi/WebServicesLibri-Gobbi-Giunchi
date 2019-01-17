@@ -24,5 +24,15 @@ namespace ClientWebServices_Giunchi_Gobbi
         {
             InitializeComponent();
         }
+
+        private void btn_visualizza_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btn_pulisci_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

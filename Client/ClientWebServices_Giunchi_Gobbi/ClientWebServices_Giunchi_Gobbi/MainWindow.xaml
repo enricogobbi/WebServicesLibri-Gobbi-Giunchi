@@ -7,6 +7,10 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <Button x:Name="btn_visualizza" Content="Visualizza" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" Width="100" Height="26" Click="btn_visualizza_Click"/>
+        <Label x:Name="lbl_Visualizza_catalogo" Content="Visualizza catalogo" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="140"/>
+        <ListBox x:Name="lst_libri" HorizontalAlignment="Left" Height="130" Margin="10,279,0,0" VerticalAlignment="Top" Width="772"/>
+        <Button x:Name="btn_pulisci" Content="Pulisci lista" HorizontalAlignment="Left" Margin="682,248,0,0" VerticalAlignment="Top" Width="100" Height="26" Click="btn_pulisci_Click"/>
+
     </Grid>
 </Window>
