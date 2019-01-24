@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Net.Http;
+using System.IO;
 
 namespace ClientWebServices_Giunchi_Gobbi
 {
@@ -27,7 +29,29 @@ namespace ClientWebServices_Giunchi_Gobbi
 
         private void btn_visualizza_Click(object sender, RoutedEventArgs e)
         {
+            string url = "http://10.13.100.3/gobbi/WebService/Server/service.php?name=" + "Panic";
+            GetRequest(url);
+            //Print();
+        }
 
+        async static void GetRequest(string url)
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                using (HttpResponseMessage response = await client.GetAsync(url))
+                {
+                    using (HttpContent content = response.Content)
+                    {//possiamo usare HttpContentHeader headers = content.Headers;
+                        string mycontent = await content.ReadAsStringAsync();
+                        MessageBox.Show(mycontent);
+                    }
+                }
+            }
+        }
+
+        public void Print(string output)
+        {
+            lst_libri.Items.Add(output);
         }
 
         private void btn_pulisci_Click(object sender, RoutedEventArgs e)
