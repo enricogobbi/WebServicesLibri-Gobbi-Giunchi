@@ -32,6 +32,21 @@ namespace ClientWebServices_Giunchi_Gobbi
 
         private void btn_pulisci_Click(object sender, RoutedEventArgs e)
         {
+            lst_libri.Items.Clear();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btn_visualizza_elenco_libri_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btn_elenco_tra_date_Click(object sender, RoutedEventArgs e)
+        {
 
         }
     }
