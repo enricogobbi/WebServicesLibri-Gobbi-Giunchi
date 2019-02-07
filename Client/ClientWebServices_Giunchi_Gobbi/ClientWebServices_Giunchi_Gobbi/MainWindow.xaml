@@ -21,6 +21,7 @@
             <ComboBoxItem Content="Fantasy"/>
             <ComboBoxItem Content="Filosofia"/>
             <ComboBoxItem Content="Fumetti"/>
+            <ComboBoxItem Content="Romanzo"/>
         </ComboBox>
         <Label x:Name="lbl_reparto" Content="Seleziona reparto" HorizontalAlignment="Left" Margin="170,10,0,0" VerticalAlignment="Top" Width="140"/>
         <Button Content="Visualizza &quot;Ultimi Arrivi&quot;" HorizontalAlignment="Left" Margin="170,72,0,0" VerticalAlignment="Top" Width="140" Height="26" Click="Button_Click"/>
