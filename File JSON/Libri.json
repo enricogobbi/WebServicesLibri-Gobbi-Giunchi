@@ -1,0 +1,115 @@
+{"libro":
+[
+	{
+	"id":"1",
+	"titolo":"Il Buio Oltre La Siepe",
+	"autore":"Harper Lee",
+	"prezzo":"€5",
+	"data archivizione":"22/12/2018",
+	"categoria":"I più venduti",
+	"numero pagine":"317",
+	"rilegato":"si",
+	"tascabile":"si",
+	"anno pubblicazione":"1960",
+	"editore":"Feltrinelli",
+	"collana":"Grandi classici",
+	"reparto":"10"
+	},
+	
+	{
+	"id":2,
+	"titolo":"Racconto di due città",
+	"autore":"Charles Dickens",
+	"prezzo":"€11",
+	"data archivizione":"10/12/2018",
+	"categoria":"Offerte speciali",
+	"numero pagine":"391",
+	"rilegato":"si",
+	"tascabile":"si",
+	"anno pubblicazione":"1859",
+	"editore":"Fabbri Editori",
+	"collana":"Narraori moderni",
+	"reparto":"10"
+	},
+	
+	{
+	"id":3,
+	"titolo":"Il signore degli anelli",
+	"autore":"John Ronald Reuel Tolkien",
+	"prezzo":"€42,50",
+	"data archivizione":"14/01/2019",
+	"categoria":"Da non perdere",
+	"numero pagine":"1264",
+	"rilegato":"si",
+	"tascabile":"si",
+	"anno pubblicazione":"1954",
+	"editore":"Bompiani",
+	"collana":"Grandi classici",
+	"reparto":"7"
+	},
+	
+	{
+	"id":4,
+	"titolo":"One piece",
+	"autore":"Eiichirō Oda",
+	"prezzo":"€15",
+	"data archivizione":"04/02/2019",
+	"categoria":"Da non perdere",
+	"numero pagine":"100",
+	"rilegato":"si",
+	"tascabile":"si",
+	"anno pubblicazione":"1997",
+	"editore":"Shūeisha",
+	"collana":"Manga moderno",
+	"reparto":"9"
+	},
+	
+	{
+	"id":5,
+	"titolo":"Il piccolo principe",
+	"autore":"Antoine de Saint-Exupéry",
+	"prezzo":"€4",
+	"data archivizione":"01/02/2019",
+	"categoria":"Offerte speciali",
+	"numero pagine":"144",
+	"rilegato":"si",
+	"tascabile":"si",
+	"anno pubblicazione":"1943",
+	"editore":"Reynal & Hitchcock",
+	"collana":"Acchiappastorie",
+	"reparto":"7"
+	},
+	
+	{
+	"id":6,
+	"titolo":"Ventimila leghe sotto i mari",
+	"autore":"Charles Dickens",
+	"prezzo":"€8",
+	"data archivizione":"10/12/2018",
+	"categoria":"Da non perdere",
+	"numero pagine":"449",
+	"rilegato":"si",
+	"tascabile":"si",
+	"anno pubblicazione":"1870",
+	"editore":"Pierre-Jules Hetzel",
+	"collana":"I millenni",
+	"reparto":"10"
+	},
+	
+	{
+	"id":7,
+	"titolo":"Naruto",
+	"autore":"Akira Toriyama",
+	"prezzo":"€13",
+	"data archivizione":"09/11/2018",
+	"categoria":"Ultimi arrivi",
+	"numero pagine":"90",
+	"rilegato":"si",
+	"tascabile":"si",
+	"anno pubblicazione":"1984",
+	"editore":"	Shūeisha",
+	"collana":"Manga moderno",
+	"reparto":"9"
+	}
+]
+}

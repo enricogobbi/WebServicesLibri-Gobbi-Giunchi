@@ -1,0 +1,53 @@
+{"reparto":
+[
+	{
+	"id":"1",
+	"tipo":"Architettura"
+	}
+	
+	{
+	"id":"2",
+	"tipo":"Arte"
+	}
+	
+	{
+	"id":"3",
+	"tipo":"Classici greci e latini"
+	}
+	
+	{
+	"id":"4",
+	"tipo":"Cucina e casa"
+	}
+	
+	{
+	"id":"5",
+	"tipo":"Diritto"
+	}
+	
+	{
+	"id":"6",
+	"tipo":"Economia"
+	}
+	
+	{
+	"id":"7",
+	"tipo":"Fantasy"
+	}
+	
+	{
+	"id":"8",
+	"tipo":"Filosofia"
+	}
+	
+	{
+	"id":"9",
+	"tipo":"Fumetti"
+	}
+	
+	{
+	"id":"10",
+	"tipo":"Romanzo"
+	}
+]
+}
