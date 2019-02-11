@@ -1,5 +1,5 @@
 <?php
-// process client request (via URL)
+	//process client request (via URL)
 	header ("Content-Type_application/json");
 
 	if(!empty($_GET['name'])){
