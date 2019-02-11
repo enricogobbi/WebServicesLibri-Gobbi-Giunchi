@@ -7,14 +7,14 @@
 	switch($funzione)
 	{
 		case '0':
-			$dati = conversioneDati('libri.json');
+			$dati = conversioneDati('Libri.json');
 			$arr = array();
 			
 			$i = 0;
 			
-			foreach($books['book'] as $book)
+			foreach($dati['libro'] as $book)
 			{
-				$arr[$i] = $book['name'];
+				$arr[$i] = $book['titolo'];
 				$i = $i + 1;
 			}
 			break;
