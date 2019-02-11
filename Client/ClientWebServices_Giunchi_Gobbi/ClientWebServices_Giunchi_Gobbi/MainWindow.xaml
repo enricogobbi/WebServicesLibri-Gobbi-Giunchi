@@ -1,0 +1,46 @@
+﻿<Window x:Class="ClientWebServices_Giunchi_Gobbi.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ClientWebServices_Giunchi_Gobbi"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid x:Name="btn_visualizza_reparti">
+        <Button x:Name="btn_visualizza" Content="Visualizza" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" Width="140" Height="26" Click="btn_visualizza_Click"/>
+        <Label x:Name="lbl_visualizza_catalogo" Content="Visualizza catalogo" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="140"/>
+        <ListBox x:Name="lst_libri" HorizontalAlignment="Left" Height="130" Margin="10,279,0,0" VerticalAlignment="Top" Width="772"/>
+        <Button x:Name="btn_pulisci" Content="Pulisci lista" HorizontalAlignment="Left" Margin="682,248,0,0" VerticalAlignment="Top" Width="100" Height="26" Click="btn_pulisci_Click"/>
+        <ComboBox x:Name="cmb_reparto" HorizontalAlignment="Left" Margin="170,41,0,0" VerticalAlignment="Top" Width="140" Height="26" SelectedIndex="0">
+            <ComboBoxItem Content="Architettura"/>
+            <ComboBoxItem Content="Arte"/>
+            <ComboBoxItem Content="Classici greci e latini"/>
+            <ComboBoxItem Content="Cucina e casa"/>
+            <ComboBoxItem Content="Diritto"/>
+            <ComboBoxItem Content="Economia"/>
+            <ComboBoxItem Content="Fantasy"/>
+            <ComboBoxItem Content="Filosofia"/>
+            <ComboBoxItem Content="Fumetti"/>
+            <ComboBoxItem Content="Romanzo"/>
+        </ComboBox>
+        <Label x:Name="lbl_reparto" Content="Seleziona reparto" HorizontalAlignment="Left" Margin="170,10,0,0" VerticalAlignment="Top" Width="140"/>
+        <Button Content="Visualizza &quot;Ultimi Arrivi&quot;" HorizontalAlignment="Left" Margin="170,72,0,0" VerticalAlignment="Top" Width="140" Height="26" Click="Button_Click"/>
+        <Button x:Name="btn_visualizza_elenco_libri" Content="Visualizza" HorizontalAlignment="Left" Margin="340,41,0,0" VerticalAlignment="Top" Width="140" Height="26" Click="btn_visualizza_elenco_libri_Click"/>
+        <Label x:Name="lbl_elenco_libri_scontati" Content="Elenco dei libri scontati" HorizontalAlignment="Left" Margin="340,10,0,0" VerticalAlignment="Top" Width="140"/>
+        <Label x:Name="lbl_giorno1" Content="Giorno" HorizontalAlignment="Left" Margin="10,103,0,0" VerticalAlignment="Top" Width="70"/>
+        <Label x:Name="lbl_mese1" Content="Mese" HorizontalAlignment="Left" Margin="85,103,0,0" VerticalAlignment="Top" Width="70"/>
+        <Label x:Name="lbl_anno1" Content="Anno" HorizontalAlignment="Left" Margin="160,103,0,0" VerticalAlignment="Top" Width="70"/>
+        <Label x:Name="lbl_giorno2" Content="Giorno" HorizontalAlignment="Left" Margin="310,103,0,0" VerticalAlignment="Top" Width="70"/>
+        <Label x:Name="lbl_mese2" Content="Mese" HorizontalAlignment="Left" Margin="385,103,0,0" VerticalAlignment="Top" Width="70"/>
+        <Label x:Name="lbl_anno2" Content="Anno" HorizontalAlignment="Left" Margin="460,103,0,0" VerticalAlignment="Top" Width="70"/>
+        <Label x:Name="lbl_boh" Content="        e" HorizontalAlignment="Left" Margin="235,134,0,0" VerticalAlignment="Top" Width="70"/>
+        <TextBox x:Name="txt_giorno1" HorizontalAlignment="Left" Height="26" Margin="10,134,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="70"/>
+        <TextBox x:Name="txt_mese1" HorizontalAlignment="Left" Height="26" Margin="85,134,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="70"/>
+        <TextBox x:Name="txt_anno1" HorizontalAlignment="Left" Height="26" Margin="160,134,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="70"/>
+        <TextBox x:Name="txt_giorno2" HorizontalAlignment="Left" Height="26" Margin="310,134,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="70"/>
+        <TextBox x:Name="txt_mese2" HorizontalAlignment="Left" Height="26" Margin="385,134,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="70"/>
+        <TextBox x:Name="txt_anno2" HorizontalAlignment="Left" Height="26" Margin="460,134,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="70"/>
+        <Button x:Name="btn_elenco_tra_date" Content="Visualizza elenco" HorizontalAlignment="Left" Margin="535,134,0,0" VerticalAlignment="Top" Width="140" Height="26" Click="btn_elenco_tra_date_Click"/>
+
+    </Grid>
+</Window>

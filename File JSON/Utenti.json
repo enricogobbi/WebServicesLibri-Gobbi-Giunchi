@@ -1,0 +1,63 @@
+{"utente":
+[
+	{
+	"telefono":"3388410063",
+	"nome":"Francesco",
+	"cognome":"Rossi",
+	"e-mail":"checcorossi00@gmail.com",
+	"password":"rossi",
+	"indirizzo":"via rizzoli",
+	"cap":"48015",
+	"citta":"Cervia",
+	"nazione":"Italia",
+	}
+	
+	{
+	"telefono":"3466788612",
+	"nome":"Alex",
+	"cognome":"Carlone",
+	"e-mail":"alex.carlone@gmail.com",
+	"password":"carlone",
+	"indirizzo":"via orte",
+	"cap":"47521",
+	"citta":"Cesena",
+	"nazione":"Italia",
+	}
+	
+	{
+	"telefono":"3274733737",
+	"nome":"Enrico",
+	"cognome":"Gobbi",
+	"e-mail":"enrico.gobbi@gmail.com",
+	"password":"gobbi",
+	"indirizzo":"via montaletto",
+	"cap":"48015",
+	"citta":"Cervia",
+	"nazione":"Italia",
+	}
+	
+	{
+	"telefono":"3923922600",
+	"nome":"Alessandro",
+	"cognome":"Giunchi",
+	"e-mail":"giunchialessandro00@gmail.com",
+	"password":"giunchi",
+	"indirizzo":"via bigatta",
+	"cap":"48015",
+	"citta":"Cervia",
+	"nazione":"Italia",
+	}
+	
+	{
+	"telefono":"3332103202",
+	"nome":"Alice",
+	"cognome":"Tosi",
+	"e-mail":"alice.tosi@gmail.com",
+	"password":"tosialice",
+	"indirizzo":"via anna frank",
+	"cap":"48015",
+	"citta":"Cervia",
+	"nazione":"Italia",
+	}
+]
+}
