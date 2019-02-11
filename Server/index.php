@@ -1,8 +1,26 @@
 <?php
 	//process client request (via URL)
 	header ("Content-Type_application/json");
-
-	if(!empty($_GET['name'])){
+	
+	$funzione = $_GET['funzione'];
+	
+	switch($funzione)
+	{
+		case '0':
+			$dati = conversioneDati('libri.json');
+			$arr = array();
+			
+			$i = 0;
+			
+			foreach($books['book'] as $book)
+			{
+				$arr[$i] = $book['name'];
+				$i = $i + 1;
+			}
+			break;
+	}
+	if(!empty($_GET['name']))
+	{
 	
 			$name=$_GET['name'];
 			$price=get_price($name);
@@ -13,7 +31,7 @@
 			else
 			//respond book price
 			deliver_response(200,"book found", $price);
-				}
+	}
 	else
 	{
 		//throw invalid request
@@ -32,14 +50,23 @@
 		echo $json_response;
 	}
 	
+	function conversioneDati($json)
+	{
+		$str = file_get_contents($json);
+		$dati = json_decode($str, true); 
+		
+		return $dati;
+	}
+	
 	function get_price($find){
 	/* $books=array(
 	 "java"=>299,
 	 "c"=>348,
 	 "php"=>267
 	 );*/
-	$str = file_get_contents('books.json');
-	$books = json_decode($str, true); 
+		
+		$books = conversioneDati('libri.json');
+	
 	// echo '<pre>' . print_r($books, true) . '</pre>';
 	/* foreach($books as $book=>$price)
 	 {
@@ -50,13 +77,13 @@
 		 }
 	 }*/
 	 
-	 foreach($books['book'] as $book)
-	 {
-		 if($book['name']==$find)
-		 {
+		foreach($books['book'] as $book)
+		{
+			if($book['name']==$find)
+			{
 			 return $book['price'];
 			 break;
-		 }
+			}
 	 }
  }
 
