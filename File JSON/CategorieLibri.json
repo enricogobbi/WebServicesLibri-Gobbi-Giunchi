@@ -1,6 +1,37 @@
 {"categorie libri":
 [
 	{
+	"libro":"Il Buio Oltre La Siepe",
+	"categoria":"I più venduti"
+	}
+	{
+	"libro":"Racconto di due città",
+	"categoria":"Offerte speciali"
+	}
+	
+	{
+	"libro":"Il signore degli anelli",
+	"categoria":"Da non perdere"
+	}
+	
+	{
+	"libro":"One piece",
+	"categoria":"Da non perdere"
+	}
+	
+	{
+	"libro":"Il piccolo principe",
+	"categoria":"Offerte speciali"
+	}
+	
+	{
+	"libro":"Ventimila leghe sotto i mari",
+	"categoria":"Da non perdere"
+	}
+	
+	{
+	"libro":"Naruto",
+	"categoria":"Ultimi arrivi"
 	}
 ]
 }

@@ -13,7 +13,7 @@
 	"anno pubblicazione":"1960",
 	"editore":"Feltrinelli",
 	"collana":"Grandi classici",
-	"reparto":"Romanzo"
+	"reparto":"10"
 	},
 	
 	{
@@ -29,7 +29,7 @@
 	"anno pubblicazione":"1859",
 	"editore":"Fabbri Editori",
 	"collana":"Narraori moderni",
-	"reparto":"Romanzo storico"
+	"reparto":"10"
 	},
 	
 	{
@@ -45,7 +45,7 @@
 	"anno pubblicazione":"1954",
 	"editore":"Bompiani",
 	"collana":"Grandi classici",
-	"reparto":"Fantasy"
+	"reparto":"7"
 	},
 	
 	{
@@ -61,7 +61,7 @@
 	"anno pubblicazione":"1997",
 	"editore":"Shūeisha",
 	"collana":"Manga moderno",
-	"reparto":"Fumetti"
+	"reparto":"9"
 	},
 	
 	{
@@ -77,7 +77,7 @@
 	"anno pubblicazione":"1943",
 	"editore":"Reynal & Hitchcock",
 	"collana":"Acchiappastorie",
-	"reparto":"Fantasy"
+	"reparto":"7"
 	},
 	
 	{
@@ -93,7 +93,7 @@
 	"anno pubblicazione":"1870",
 	"editore":"Pierre-Jules Hetzel",
 	"collana":"I millenni",
-	"reparto":"Romanzo"
+	"reparto":"10"
 	},
 	
 	{
@@ -109,10 +109,7 @@
 	"anno pubblicazione":"1984",
 	"editore":"	Shūeisha",
 	"collana":"Manga moderno",
-	"reparto":"Fumetti"
+	"reparto":"9"
 	}
 ]
 }
-
-//ultimi arrivi, offerte speciali, da non perdere
-//almeno un fumetto
