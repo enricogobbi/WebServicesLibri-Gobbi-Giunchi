@@ -1,7 +1,7 @@
 {"libro":
 [
 	{
-	"id":"1",
+	"id":1,
 	"titolo":"Il Buio Oltre La Siepe",
 	"autore":"Harper Lee",
 	"prezzo":"€5",
@@ -107,9 +107,10 @@
 	"rilegato":"si",
 	"tascabile":"si",
 	"anno pubblicazione":"1984",
-	"editore":"	Shūeisha",
+	"editore":"Shūeisha",
 	"collana":"Manga moderno",
 	"reparto":"9"
 	}
+	
 ]
 }

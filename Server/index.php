@@ -7,19 +7,26 @@
 	switch($funzione)
 	{
 		case '0':
-			$dati = conversioneDati('Libri.json');
+			$dati = conversioneDati('../FileJSON/Libri.json');
+			//$dati = conversioneDati('prova.json');
 			$arr = array();
 			
 			$i = 0;
+			
+			//var_dump($dati);
 			
 			foreach($dati['libro'] as $book)
 			{
 				$arr[$i] = $book['titolo'];
 				$i = $i + 1;
 			}
+			
+			deliver_response(200,"all books", $arr);
 			break;
 	}
-	if(!empty($_GET['name']))
+	
+	
+	/*if(!empty($_GET['funzione']))
 	{
 	
 			$name=$_GET['name'];
@@ -36,7 +43,7 @@
 	{
 		//throw invalid request
 		deliver_response(400,"Invalid request", NULL);
-	}
+	}*/
 	
 	function deliver_response($status, $status_message, $data)
 	{
