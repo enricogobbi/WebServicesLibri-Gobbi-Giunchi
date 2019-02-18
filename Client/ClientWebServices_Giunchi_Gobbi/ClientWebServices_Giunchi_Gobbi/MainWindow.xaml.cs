@@ -14,6 +14,11 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Net.Http;
 using System.IO;
+using System.Xml;
+using System.Xml.Linq;
+using Newtonsoft.Json;
+using System.Web.Script.Serialization;
+using System.Threading;
 
 namespace ClientWebServices_Giunchi_Gobbi
 {
@@ -22,16 +27,47 @@ namespace ClientWebServices_Giunchi_Gobbi
     /// </summary>
     public partial class MainWindow : Window
     {
+        static string mycontent = "";
+        List<string> lst;
+        delegate void Delegato(string url);
+        static readonly object locker = new object();
+
         public MainWindow()
         {
             InitializeComponent();
+             
         }
+
+        
 
         private void btn_visualizza_Click(object sender, RoutedEventArgs e)
         {
-            string url = "http://10.13.100.3/gobbi/WebService/Server/service.php?name=" + "Panic";
-            GetRequest(url);
-            //Print();
+            string url = "http://10.13.100.5/gobbi/WebServicesLibri-Gobbi-Giunchi/Server/?funzione=0";
+            Thread th = new Thread(()=>GetRequest(url));
+            th.Start();
+            //GetRequest(url);
+
+
+            //GetRequest(url);
+            
+            
+
+            while (true)
+            {
+                if (mycontent != "")
+                {
+                    MessageBox.Show(mycontent);
+                    JavaScriptSerializer json = new JavaScriptSerializer();
+                    lst = new List<string>(json.Deserialize<List<string>>(mycontent));
+
+                    foreach (string str in lst)
+                    {
+                        lst_libri.Items.Add(str);
+                    }
+                    break;
+                }
+                
+            }
         }
 
         async static void GetRequest(string url)
@@ -41,9 +77,12 @@ namespace ClientWebServices_Giunchi_Gobbi
                 using (HttpResponseMessage response = await client.GetAsync(url))
                 {
                     using (HttpContent content = response.Content)
-                    {//possiamo usare HttpContentHeader headers = content.Headers;
-                        string mycontent = await content.ReadAsStringAsync();
+                    {
+                        mycontent = await content.ReadAsStringAsync();
                         MessageBox.Show(mycontent);
+
+                        
+                        //MessageBox.Show();
                     }
                 }
             }
