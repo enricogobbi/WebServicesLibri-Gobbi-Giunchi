@@ -7,21 +7,50 @@
 	switch($funzione)
 	{
 		case '0':
-			$dati = conversioneDati('../FileJSON/Libri.json');
+			$catalogo = conversioneDati('../FileJSON/Libri.json');
 			//$dati = conversioneDati('prova.json');
 			$arr = array();
 			
 			$i = 0;
 			
-			//var_dump($dati);
-			
-			foreach($dati['libro'] as $book)
+			foreach($catalogo['libro'] as $book)
 			{
 				$arr[$i] = $book['titolo'];
 				$i = $i + 1;
 			}
 			
 			deliver_response(200,"all books", $arr);
+			break;
+			
+		case '1':
+			$dati = conversioneDati('../FileJSON/Libri.json');
+			$reparti = conversioneDati('../FileJSON/Reparti.json');
+			$arr = array();
+			$i = 0;
+			
+			foreach($dati['reparto'] as $reparto)
+			{
+				if(strtoupper($reparto['tipo']) == strtoupper('Fumetti'))
+					$idFumetti=reparto['id'];
+			}
+
+			
+			foreach($dati['libro'] as $book)
+			{
+				if($book['reparto'] == $idFumetti && strtoupper($book['categoria']) == strtoupper('I più venduti'))
+				{
+					$arr[$i] = $book['titolo'];
+					$i = $i + 1;
+				}
+			}
+			
+			deliver_response(200,"fumetti", $arr);
+			break;
+
+		
+			
+		default:
+			deliver_response(400,"Invalid request", NULL);
 			break;
 	}
 	
