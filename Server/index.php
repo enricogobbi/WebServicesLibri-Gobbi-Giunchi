@@ -127,10 +127,24 @@
 			deliver_response(200,"date    ", $arr);
 			break;
 
-		case '3':
-			
+		case '4':
+			//Conversione file JSON in array associativo
+			$dati = conversioneDati('../FileJSON/Libri.json');
+			$user = conversioneDati('../FileJSON/Utenti.json');
+			$carrelli = conversioneDati('../FileJSON/Carrelli.json');
+			$libriCarr = conversioneDati('../FileJSON/LibriCarrello.json');
+
+			$idCarr = $_GET['carrello'];
+
+			foreach($carrelli['carrello'] as $carr)
+			{
+				if($idCarr)
+					array_push($arr, $book['titolo']);
+			}
+
+			deliver_response(200,"", $arr);
 			break;
-			
+
 		default:
 			deliver_response(400,"Invalid request", NULL);
 			break;
