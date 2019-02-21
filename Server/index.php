@@ -3,9 +3,9 @@
 	header ("Content-Type_application/json");
 	
 	//Verifica che sia stata passata un numero di funzione da eseguire
-	if(empty($_GET['funzione']))
-		$funzione = null;
-	else
+	// if(empty($_GET['funzione']))
+	// 	$funzione = null;
+	// else
 		$funzione = $_GET['funzione'];
 	
 	switch($funzione)
@@ -135,12 +135,31 @@
 			$libriCarr = conversioneDati('../FileJSON/LibriCarrello.json');
 
 			$idCarr = $_GET['carrello'];
+			$utente="";
+			$tit = array();
+			$nCopie = "";
 
 			foreach($carrelli['carrello'] as $carr)
 			{
-				if($idCarr)
-					array_push($arr, $book['titolo']);
+				if($idCarr ==  $carr["id"])
+					$utente = $carr["utente"];
 			}
+
+			foreach($libriCarr['librocarrello'] as $associazione)
+			{
+				if($associazione['carrello'] == $idCarr);
+				{
+					foreach($dati['libro'] as $book)
+					{
+						array_push($tit, $book['titolo']);
+					}
+
+					$nCopie = $associazione['nCopie'];
+				}
+			}
+
+			$arr = array();
+			array_push($arr, 'utente'=>$utente, $tit, 'nCopie'=>$nCopie);
 
 			deliver_response(200,"", $arr);
 			break;
