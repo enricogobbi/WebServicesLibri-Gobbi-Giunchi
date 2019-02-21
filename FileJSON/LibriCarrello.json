@@ -5,28 +5,28 @@
 	"carrello":"1",
 	"nCopie":"1",
 	"disponibilita":"si"
-	}
+	},
 	
 	{
 	"libro":"2",
 	"carrello":"2",
 	"nCopie":"1",
 	"disponibilita":"si"
-	}
+	},
 	
 	{
 	"libro":"3",
 	"carrello":"3",
 	"nCopie":"1",
 	"disponibilita":"no"
-	}
+	},
 	
 	{
 	"libro":"4",
 	"carrello":"4",
 	"nCopie":"2",
 	"disponibilita":"si"
-	}
+	},
 	
 	{
 	"libro":"5",

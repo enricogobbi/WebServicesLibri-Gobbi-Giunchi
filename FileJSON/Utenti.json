@@ -9,8 +9,8 @@
 	"indirizzo":"via rizzoli",
 	"cap":"48015",
 	"citta":"Cervia",
-	"nazione":"Italia",
-	}
+	"nazione":"Italia"
+	},
 	
 	{
 	"telefono":"3466788612",
@@ -21,8 +21,8 @@
 	"indirizzo":"via orte",
 	"cap":"47521",
 	"citta":"Cesena",
-	"nazione":"Italia",
-	}
+	"nazione":"Italia"
+	},
 	
 	{
 	"telefono":"3274733737",
@@ -33,8 +33,8 @@
 	"indirizzo":"via montaletto",
 	"cap":"48015",
 	"citta":"Cervia",
-	"nazione":"Italia",
-	}
+	"nazione":"Italia"
+	},
 	
 	{
 	"telefono":"3923922600",
@@ -45,8 +45,8 @@
 	"indirizzo":"via bigatta",
 	"cap":"48015",
 	"citta":"Cervia",
-	"nazione":"Italia",
-	}
+	"nazione":"Italia"
+	},
 	
 	{
 	"telefono":"3332103202",
@@ -57,7 +57,7 @@
 	"indirizzo":"via anna frank",
 	"cap":"48015",
 	"citta":"Cervia",
-	"nazione":"Italia",
+	"nazione":"Italia"
 	}
 ]
 }

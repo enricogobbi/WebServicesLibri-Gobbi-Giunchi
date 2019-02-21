@@ -27,13 +27,13 @@
 			$reparti = conversioneDati('../FileJSON/Reparti.json');
 			$arr = array();
 			$i = 0;
+			$idFumetti="";
 			
-			foreach($dati['reparto'] as $reparto)
+			foreach($reparti['reparto'] as $rep)
 			{
-				if(strtoupper($reparto['tipo']) == strtoupper('Fumetti'))
-					$idFumetti=reparto['id'];
+				if(strtoupper($rep['tipo']) == strtoupper('Fumetti'))
+					$idFumetti=$rep['id'];
 			}
-
 			
 			foreach($dati['libro'] as $book)
 			{
