@@ -2,6 +2,7 @@
 	//process client request (via URL)
 	header ("Content-Type_application/json");
 	
+	//Verifica che sia stata passata un numero di funzione da eseguire
 	if(empty($_GET['funzione']))
 		$funzione = null;
 	else
@@ -10,12 +11,14 @@
 	switch($funzione)
 	{
 		case '0':
+			//Conversione file JSON in array associativo
 			$catalogo = conversioneDati('../FileJSON/Libri.json');
-			//$dati = conversioneDati('prova.json');
-			$arr = array();
 			
+			//inizializzazione variabili
+			$arr = array();
 			$i = 0;
 			
+			//Caricamento di un array con tutti i titoli dei libri per visualizzazione dell'intero catalogo di libri
 			foreach($catalogo['libro'] as $book)
 			{
 				$arr[$i] = $book['titolo'];
@@ -26,21 +29,26 @@
 			break;
 			
 		case '1':
+			//Conversione file JSON in array associativo
 			$dati = conversioneDati('../FileJSON/Libri.json');
 			$reparti = conversioneDati('../FileJSON/Reparti.json');
+			
+			//inizializzazione variabili
 			$arr = array();
 			$i = 0;
-			$idFumetti="";
+			$idRep="";
 			
+			//Ricerca id corrispondente al reparto richiesto
 			foreach($reparti['reparto'] as $rep)
 			{
-				if(strtoupper($rep['tipo']) == strtoupper('Fumetti'))
-					$idFumetti=$rep['id'];
+				if(strtoupper($rep['tipo']) == strtoupper($_GET['reparto']))
+					$idRep=$rep['id'];
 			}
 			
+			//Ricerca dei libri del reparto richiesto e appartenenti alla categoria de "I più venduti"
 			foreach($dati['libro'] as $book)
 			{
-				if($book['reparto'] == $idFumetti && strtoupper($book['categoria']) == strtoupper('I più venduti'))
+				if($book['reparto'] == $idRep && strtoupper($book['categoria']) == strtoupper('I più venduti'))
 				{
 					$arr[$i] = $book['titolo'];
 					$i = $i + 1;
@@ -51,13 +59,16 @@
 			break;
 
 		case '2':
+			//Conversione file JSON in array associativo
 			$dati = conversioneDati('../FileJSON/Libri.json');
 			$categorie = conversioneDati('../FileJSON/Categorie.json');
 			$libriCategorie = conversioneDati('../FileJSON/CategorieLibri.json');
+
+			//inizializzazione variabili
 			$tit=array();
 			$arr = array();
 
-			//Ricerca delle categorie che presentano uno sconto
+			//Ricerca dei libri appartenenti alle categorie categorie che presentano uno sconto
 			foreach($categorie['categoria'] as $cat)
 			{
 				if($cat['sconto'] != 0)
@@ -77,7 +88,8 @@
 			}
 
 			asort($arr);
-
+			
+			//Popolamento array da inviare con tutti i titoli dei libri in sconto
 			foreach($arr as $book)
 			{
 				array_push($tit, $book['titolo']);
@@ -87,7 +99,10 @@
 			break;
 
 		case '3':
+			//Conversione file JSON in array associativo
 			$dati = conversioneDati('../FileJSON/Libri.json');
+
+			//inizializzazione variabili
 			$arr = array();
 
 			//Timestamp data inizio ricerca
@@ -95,8 +110,11 @@
 
 			//Timestamp data inizio ricerca
 			$dataFine = mktime(0,0,0,$_GET['mese2'],$_GET['giorno2'],$_GET['anno2']);
-			//$dataFine = date("d/m/Y", $tmp);
 
+			//Effettuata la ricerca dei libri inseriti in un intervallo di date calcolando il timestamp delle date di inizio e fine intervallo 
+			//e quello della data di inserimento del libro.
+			//Il timestamp (mktime) calcola in secondi il tempo trascorso dal 1 gennaio 1970 
+			//quindi se la data è compresa tra i timestamp di inzio e fine intervallo allora la data sarà all'interno dell'intervallo
 			foreach($dati['libro'] as $book)
 			{
 				$tmp = explode("/", $book['dataArchiviazione']);
@@ -108,6 +126,11 @@
 			
 			deliver_response(200,"date    ", $arr);
 			break;
+
+		case '3':
+			
+			break;
+			
 		default:
 			deliver_response(400,"Invalid request", NULL);
 			break;
@@ -132,7 +155,7 @@
 		//throw invalid request
 		deliver_response(400,"Invalid request", NULL);
 	}*/
-	
+	//Funzione per invio della risposta al client
 	function deliver_response($status, $status_message, $data)
 	{
 		header("HTTP/1.1 $status $status_message");
@@ -145,6 +168,7 @@
 		echo $json_response;
 	}
 	
+	//Funzione per la conversione da file JSON a array associativo
 	function conversioneDati($json)
 	{
 		$str = file_get_contents($json);

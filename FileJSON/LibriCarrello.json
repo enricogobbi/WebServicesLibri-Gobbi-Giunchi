@@ -18,7 +18,7 @@
 	"libro":"3",
 	"carrello":"3",
 	"nCopie":"1",
-	"disponibilita":"no"
+	"disponibilita":"si"
 	},
 	
 	{
@@ -32,7 +32,7 @@
 	"libro":"5",
 	"carrello":"5",
 	"nCopie":"1",
-	"disponibilita":"no"
+	"disponibilita":"si"
 	}
 ]
 }
