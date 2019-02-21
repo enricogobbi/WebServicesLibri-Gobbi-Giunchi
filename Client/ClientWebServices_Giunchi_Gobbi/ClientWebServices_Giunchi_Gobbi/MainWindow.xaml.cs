@@ -28,49 +28,31 @@ namespace ClientWebServices_Giunchi_Gobbi
     public partial class MainWindow : Window
     {
         static string mycontent = "";
-        List<string> lst;
-        delegate void Delegato(string url);
-        static readonly object locker = new object();
+        static string titoli;
+        static string[] splittato = new string[10];
+        string url = "http://10.13.100.5/gobbi/WebServicesLibri-Gobbi-Giunchi/Server/?funzione=";
 
         public MainWindow()
         {
             InitializeComponent();
-             
         }
 
         
 
-        private void btn_visualizza_Click(object sender, RoutedEventArgs e)
+        private async void btn_visualizza_Click(object sender, RoutedEventArgs e)
         {
-            string url = "http://10.13.100.5/gobbi/WebServicesLibri-Gobbi-Giunchi/Server/?funzione=0";
-            Thread th = new Thread(()=>GetRequest(url));
-            th.Start();
-            //GetRequest(url);
+            Task task = GetRequest(url + "0");
+            await task;
+            string str;
 
-
-            //GetRequest(url);
-            
-            
-
-            while (true)
+            foreach(string tmp in splittato)
             {
-                if (mycontent != "")
-                {
-                    MessageBox.Show(mycontent);
-                    JavaScriptSerializer json = new JavaScriptSerializer();
-                    lst = new List<string>(json.Deserialize<List<string>>(mycontent));
-
-                    foreach (string str in lst)
-                    {
-                        lst_libri.Items.Add(str);
-                    }
-                    break;
-                }
-                
+                str = tmp.Trim('"');
+                lst_libri.Items.Add(str);
             }
         }
 
-        async static void GetRequest(string url)
+        async static Task GetRequest(string url)
         {
             using (HttpClient client = new HttpClient())
             {
@@ -79,18 +61,32 @@ namespace ClientWebServices_Giunchi_Gobbi
                     using (HttpContent content = response.Content)
                     {
                         mycontent = await content.ReadAsStringAsync();
-                        MessageBox.Show(mycontent);
 
-                        
-                        //MessageBox.Show();
+                        bool find = true;
+                        int start = 0;
+                        int end = 0;
+                        int i = 0;
+
+                        while (find == true)
+                        {
+                            if (mycontent.Substring(start).Contains("data"))
+                            {
+                                start = mycontent.IndexOf("data", start);
+                                end = mycontent.IndexOf("}", start);
+                                titoli = mycontent.Substring(start + 7, end - start - 8);
+                                splittato = titoli.Split(',');
+                                start++;
+                                i++;
+                            }
+                            else
+                            {
+                                find = false;
+                            }
+                        }
+                        //MessageBox.Show(mycontent);
                     }
                 }
             }
-        }
-
-        public void Print(string output)
-        {
-            lst_libri.Items.Add(output);
         }
 
         private void btn_pulisci_Click(object sender, RoutedEventArgs e)
@@ -100,7 +96,16 @@ namespace ClientWebServices_Giunchi_Gobbi
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            GetRequest(url + "1");
+            /*string str;
 
+            foreach (string tmp in splittato)
+            {
+                str = tmp.Trim('"');
+                lst_libri.Items.Add(str);
+            }*/
+
+            MessageBox.Show(mycontent);
         }
 
         private void btn_visualizza_elenco_libri_Click(object sender, RoutedEventArgs e)
