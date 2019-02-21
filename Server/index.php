@@ -83,6 +83,14 @@
 			deliver_response(200,"sconti  ", $tit);
 			break;
 
+		case '3':
+			$tmp = mktime(0,0,0,$_GET['giorno'],$_GET['mese'],$_GET['anno']);
+			$data = date($tmp);
+			break;
+
+		
+		
+
 		default:
 			deliver_response(400,"Invalid request", NULL);
 			break;
