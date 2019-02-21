@@ -2,7 +2,10 @@
 	//process client request (via URL)
 	header ("Content-Type_application/json");
 	
-	$funzione = $_GET['funzione'];
+	if(empty($_GET['funzione']))
+		$funzione = null;
+	else
+		$funzione = $_GET['funzione'];
 	
 	switch($funzione)
 	{
@@ -80,17 +83,31 @@
 				array_push($tit, $book['titolo']);
 			}
 
-			deliver_response(200,"sconti  ", $tit);
+			deliver_response(200,"scontati", $tit);
 			break;
 
 		case '3':
-			$tmp = mktime(0,0,0,$_GET['giorno'],$_GET['mese'],$_GET['anno']);
-			$data = date($tmp);
+			$dati = conversioneDati('../FileJSON/Libri.json');
+			$arr = array();
+
+			//Timestamp data inizio ricerca
+			$dataInizio = mktime(0,0,0,$_GET['mese1'],$_GET['giorno1'],$_GET['anno1']);
+
+			//Timestamp data inizio ricerca
+			$dataFine = mktime(0,0,0,$_GET['mese2'],$_GET['giorno2'],$_GET['anno2']);
+			//$dataFine = date("d/m/Y", $tmp);
+
+			foreach($dati['libro'] as $book)
+			{
+				$tmp = explode("/", $book['dataArchiviazione']);
+				$dataArch = mktime(0,0,0,$tmp[1], $tmp[0], $tmp[2]);
+
+				if($dataArch <= $dataFine && $dataArch >= $dataInizio)
+					array_push($arr, $book['titolo']);
+			}
+			
+			deliver_response(200,"date    ", $arr);
 			break;
-
-		
-		
-
 		default:
 			deliver_response(400,"Invalid request", NULL);
 			break;
