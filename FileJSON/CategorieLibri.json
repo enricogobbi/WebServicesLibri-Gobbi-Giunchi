@@ -1,36 +1,36 @@
-{"categorie libri":
+{"categorieLibri":
 [
 	{
-	"libro":"Il Buio Oltre La Siepe",
+	"libro":1,
 	"categoria":"I più venduti"
 	},
 	{
-	"libro":"Racconto di due città",
+	"libro":2,
 	"categoria":"Offerte speciali"
 	},
 	
 	{
-	"libro":"Il signore degli anelli",
+	"libro":3,
 	"categoria":"Da non perdere"
 	},
 	
 	{
-	"libro":"One piece",
-	"categoria":"Da non perdere"
+	"libro":4,
+	"categoria":"i più venduti"
 	},
 	
 	{
-	"libro":"Il piccolo principe",
+	"libro":5,
 	"categoria":"Offerte speciali"
 	},
 	
 	{
-	"libro":"Ventimila leghe sotto i mari",
+	"libro":6,
 	"categoria":"Da non perdere"
 	},
 	
 	{
-	"libro":"Naruto",
+	"libro":7,
 	"categoria":"Ultimi arrivi"
 	}
 ]

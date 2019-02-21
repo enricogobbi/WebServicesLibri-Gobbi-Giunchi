@@ -44,11 +44,45 @@
 				}
 			}
 			
-			deliver_response(200,"fumetti", $arr);
+			deliver_response(200,"fumetti ", $arr);
 			break;
 
-		
-			
+		case '2':
+			$dati = conversioneDati('../FileJSON/Libri.json');
+			$categorie = conversioneDati('../FileJSON/Categorie.json');
+			$libriCategorie = conversioneDati('../FileJSON/CategorieLibri.json');
+			$tit=array();
+			$arr = array();
+
+			//Ricerca delle categorie che presentano uno sconto
+			foreach($categorie['categoria'] as $cat)
+			{
+				if($cat['sconto'] != 0)
+				{
+					foreach($libriCategorie['categorieLibri'] as $libCat)
+					{
+						if($libCat['categoria'] == $cat['tipo'])
+						{
+							foreach($dati['libro'] as $book)
+							{
+								if($book['id'] == $libCat['libro'])
+									array_push($arr, array("sconto"=>$cat['sconto'], "titolo"=>$book["titolo"]));
+							}
+						}
+					}
+				}
+			}
+
+			asort($arr);
+
+			foreach($arr as $book)
+			{
+				array_push($tit, $book['titolo']);
+			}
+
+			deliver_response(200,"sconti  ", $tit);
+			break;
+
 		default:
 			deliver_response(400,"Invalid request", NULL);
 			break;
