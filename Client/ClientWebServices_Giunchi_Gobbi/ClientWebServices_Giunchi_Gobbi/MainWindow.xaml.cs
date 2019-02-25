@@ -43,13 +43,15 @@ namespace ClientWebServices_Giunchi_Gobbi
         {
             Task task = GetRequest(url + "0");
             await task;
-            string str;
+            string str = "";
 
-            foreach(string tmp in splittato)
+            /*foreach (string tmp in splittato)
             {
                 str = tmp.Trim('"');
                 lst_libri.Items.Add(str);
-            }
+            }*/
+
+            Visualiza(str);
         }
 
         async static Task GetRequest(string url)
@@ -97,13 +99,15 @@ namespace ClientWebServices_Giunchi_Gobbi
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             GetRequest(url + "1");
-            string str;
+            string str = "";
 
-            foreach (string tmp in splittato)
+            /* (string tmp in splittato)
             {
                 str = tmp.Trim('"');
                 lst_libri.Items.Add(str);
-            }
+            }*/
+
+            Visualiza(str);
 
             //MessageBox.Show(mycontent);
         }
@@ -111,13 +115,15 @@ namespace ClientWebServices_Giunchi_Gobbi
         private void btn_visualizza_elenco_libri_Click(object sender, RoutedEventArgs e)
         {
             GetRequest(url + "2");
-            string str;
+            string str = "";
 
-            foreach (string tmp in splittato)
+            /*foreach (string tmp in splittato)
             {
                 str = tmp.Trim('"');
                 lst_libri.Items.Add(str);
-            }
+            }*/
+
+            Visualiza(str);
 
             //MessageBox.Show(mycontent);
         }
@@ -125,15 +131,34 @@ namespace ClientWebServices_Giunchi_Gobbi
         private void btn_elenco_tra_date_Click(object sender, RoutedEventArgs e)
         {
             GetRequest(url + "3");
-            string str;
+            string str = "";
 
+            /*foreach (string tmp in splittato)
+            {
+                str = tmp.Trim('"');
+                lst_libri.Items.Add(str);
+            }*/
+
+            //MessageBox.Show(mycontent);
+
+            Visualiza(str);
+        }
+
+        private void btn_codice_Click(object sender, RoutedEventArgs e)
+        {
+            GetRequest(url + "4");
+            string str = "";
+
+            Visualiza(str);
+        }
+
+        public void Visualiza(string str)
+        {
             foreach (string tmp in splittato)
             {
                 str = tmp.Trim('"');
                 lst_libri.Items.Add(str);
             }
-
-            //MessageBox.Show(mycontent);
         }
     }
 }
