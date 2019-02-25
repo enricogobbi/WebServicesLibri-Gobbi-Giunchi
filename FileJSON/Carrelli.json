@@ -1,0 +1,28 @@
+{"carrello":
+[
+	{
+	"id":"1",
+	"utente":"rossi"
+	},
+	
+	{
+	"id":"2",
+	"utente":"carlone"
+	},
+	
+	{
+	"id":"3",
+	"utente":"gobbi"
+	},
+	
+	{
+	"id":"4",
+	"utente":"giunchi"
+	},
+	
+	{
+	"id":"5",
+	"utente":"tosialice"
+	}
+]
+}

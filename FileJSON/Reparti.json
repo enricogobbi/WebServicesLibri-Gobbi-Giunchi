@@ -1,52 +1,52 @@
 {"reparto":
 [
 	{
-	"id":"1",
+	"id":1,
 	"tipo":"Architettura"
-	}
+	},
 	
 	{
-	"id":"2",
+	"id":2,
 	"tipo":"Arte"
-	}
+	},
 	
 	{
-	"id":"3",
+	"id":3,
 	"tipo":"Classici greci e latini"
-	}
+	},
 	
 	{
-	"id":"4",
+	"id":4,
 	"tipo":"Cucina e casa"
-	}
+	},
 	
 	{
-	"id":"5",
+	"id":5,
 	"tipo":"Diritto"
-	}
+	},
 	
 	{
-	"id":"6",
+	"id":6,
 	"tipo":"Economia"
-	}
+	},
 	
 	{
-	"id":"7",
+	"id":7,
 	"tipo":"Fantasy"
-	}
+	},
 	
 	{
-	"id":"8",
+	"id":8,
 	"tipo":"Filosofia"
-	}
+	},
 	
 	{
-	"id":"9",
+	"id":9,
 	"tipo":"Fumetti"
-	}
+	},
 	
 	{
-	"id":"10",
+	"id":10,
 	"tipo":"Romanzo"
 	}
 ]

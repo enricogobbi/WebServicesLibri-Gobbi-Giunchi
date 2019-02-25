@@ -1,0 +1,11 @@
+{"utenti":
+[
+	"libri
+	libri categ
+	reparti
+	categorie
+	carrello 
+	utente
+	libricarrello
+	"
+]}
