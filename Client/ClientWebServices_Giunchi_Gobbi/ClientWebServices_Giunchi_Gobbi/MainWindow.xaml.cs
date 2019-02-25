@@ -97,25 +97,43 @@ namespace ClientWebServices_Giunchi_Gobbi
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             GetRequest(url + "1");
-            /*string str;
+            string str;
 
             foreach (string tmp in splittato)
             {
                 str = tmp.Trim('"');
                 lst_libri.Items.Add(str);
-            }*/
+            }
 
-            MessageBox.Show(mycontent);
+            //MessageBox.Show(mycontent);
         }
 
         private void btn_visualizza_elenco_libri_Click(object sender, RoutedEventArgs e)
         {
+            GetRequest(url + "2");
+            string str;
 
+            foreach (string tmp in splittato)
+            {
+                str = tmp.Trim('"');
+                lst_libri.Items.Add(str);
+            }
+
+            //MessageBox.Show(mycontent);
         }
 
         private void btn_elenco_tra_date_Click(object sender, RoutedEventArgs e)
         {
+            GetRequest(url + "3");
+            string str;
 
+            foreach (string tmp in splittato)
+            {
+                str = tmp.Trim('"');
+                lst_libri.Items.Add(str);
+            }
+
+            //MessageBox.Show(mycontent);
         }
     }
 }
