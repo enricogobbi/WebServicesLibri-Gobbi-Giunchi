@@ -41,7 +41,7 @@
 			//Ricerca id corrispondente al reparto richiesto
 			foreach($reparti['reparto'] as $rep)
 			{
-				if(strtoupper($rep['tipo']) == strtoupper($_GET['reparto']))
+				if(strtoupper($rep['tipo']) == strtoupper(/*$_GET['reparto']*/"fumetti"))
 					$idRep=$rep['id'];
 			}
 			
@@ -105,11 +105,15 @@
 			//inizializzazione variabili
 			$arr = array();
 
-			//Timestamp data inizio ricerca
-			$dataInizio = mktime(0,0,0,$_GET['mese1'],$_GET['giorno1'],$_GET['anno1']);
+			//split date inserite in input
+			$tmpInizio = explode('/', $_GET['data1']);;
+			$tmpFine = explode('/', $_GET['data2']);
 
 			//Timestamp data inizio ricerca
-			$dataFine = mktime(0,0,0,$_GET['mese2'],$_GET['giorno2'],$_GET['anno2']);
+			$dataInizio = mktime(0,0,0,$tmpInizio[1],$tmpInizio[0],$tmpInizio[2]);
+
+			//Timestamp data inizio ricerca
+			$dataFine = mktime(0,0,0,$tmpFine[1],$tmpFine[0],$tmpFine[2]);
 
 			//Effettuata la ricerca dei libri inseriti in un intervallo di date calcolando il timestamp delle date di inizio e fine intervallo 
 			//e quello della data di inserimento del libro.
@@ -134,7 +138,7 @@
 			$carrelli = conversioneDati('../FileJSON/Carrelli.json');
 			$libriCarr = conversioneDati('../FileJSON/LibriCarrello.json');
 
-			$idCarr = $_GET['carrello'];
+			$idCarr = $_GET['codice'];
 			$utente="";
 			$tit = array();
 			$nCopie = "";
@@ -147,21 +151,22 @@
 
 			foreach($libriCarr['librocarrello'] as $associazione)
 			{
-				if($associazione['carrello'] == $idCarr);
+				if($associazione['carrello'] == $_GET['codice']);
 				{
 					foreach($dati['libro'] as $book)
 					{
-						array_push($tit, $book['titolo']);
+						if($book['id'] == $associazione['libro'])
+							array_push($tit, array('titolo'=>$book['titolo'], 'nCopie' => $associazione['nCopie']));
 					}
 
-					$nCopie = $associazione['nCopie'];
+					//$nCopie = $associazione['nCopie'];
 				}
 			}
 
 			$arr = array();
-			array_push($arr, 'utente'=>$utente, $tit, 'nCopie'=>$nCopie);
+			array_push($arr, array('utente'=>$utente, 'libri' => $tit));
 
-			deliver_response(200,"", $arr);
+			deliver_response(200,"carrello", $arr);
 			break;
 
 		default:
@@ -209,34 +214,4 @@
 		
 		return $dati;
 	}
-	
-	function get_price($find){
-	/* $books=array(
-	 "java"=>299,
-	 "c"=>348,
-	 "php"=>267
-	 );*/
-		
-		$books = conversioneDati('libri.json');
-	
-	// echo '<pre>' . print_r($books, true) . '</pre>';
-	/* foreach($books as $book=>$price)
-	 {
-		 if($book==$find)
-		 {
-			 return $price;
-			 break;
-		 }
-	 }*/
-	 
-		foreach($books['book'] as $book)
-		{
-			if($book['name']==$find)
-			{
-			 return $book['price'];
-			 break;
-			}
-	 }
- }
-
 ?>
