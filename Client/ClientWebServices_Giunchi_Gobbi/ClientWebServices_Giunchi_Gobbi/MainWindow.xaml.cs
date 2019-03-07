@@ -156,8 +156,6 @@ namespace ClientWebServices_Giunchi_Gobbi
             }*/
 
             Visualizza(splittato);
-
-            //MessageBox.Show(mycontent);
         }
     }
 }
