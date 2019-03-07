@@ -13,3 +13,7 @@ C:\Users\alessandro.giunchi\Desktop\WebServicesLibri-Gobbi-Giunchi\Client\Client
 C:\Users\alessandro.giunchi\Desktop\WebServicesLibri-Gobbi-Giunchi\Client\ClientWebServices_Giunchi_Gobbi\ClientWebServices_Giunchi_Gobbi\obj\Debug\ClientWebServices_Giunchi_Gobbi.csproj.CoreCompileInputs.cache
 C:\Users\alessandro.giunchi\Desktop\WebServicesLibri-Gobbi-Giunchi\Client\ClientWebServices_Giunchi_Gobbi\ClientWebServices_Giunchi_Gobbi\obj\Debug\ClientWebServices_Giunchi_Gobbi.exe
 C:\Users\alessandro.giunchi\Desktop\WebServicesLibri-Gobbi-Giunchi\Client\ClientWebServices_Giunchi_Gobbi\ClientWebServices_Giunchi_Gobbi\obj\Debug\ClientWebServices_Giunchi_Gobbi.pdb
+C:\Users\alessandro.giunchi\Desktop\WebServicesLibri-Gobbi-Giunchi\Client\ClientWebServices_Giunchi_Gobbi\ClientWebServices_Giunchi_Gobbi\bin\Debug\Newtonsoft.Json.dll
+C:\Users\alessandro.giunchi\Desktop\WebServicesLibri-Gobbi-Giunchi\Client\ClientWebServices_Giunchi_Gobbi\ClientWebServices_Giunchi_Gobbi\bin\Debug\Newtonsoft.Json.pdb
+C:\Users\alessandro.giunchi\Desktop\WebServicesLibri-Gobbi-Giunchi\Client\ClientWebServices_Giunchi_Gobbi\ClientWebServices_Giunchi_Gobbi\bin\Debug\Newtonsoft.Json.xml
+C:\Users\alessandro.giunchi\Desktop\WebServicesLibri-Gobbi-Giunchi\Client\ClientWebServices_Giunchi_Gobbi\ClientWebServices_Giunchi_Gobbi\obj\Debug\ClientWebServices_Giunchi_Gobbi.csproj.CopyComplete
